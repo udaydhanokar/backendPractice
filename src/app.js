@@ -18,4 +18,21 @@ app.use(express.static("public")) //local eg images stored in our images
 //use of cookies
 //cookies access and changes 
 app.use(cookieParser())
+
+
+
+
+
+//routes import
+import userRouter from './routes/user.routes.js'
+
+
+//routes declaration
+app.use('/api/v1/users',userRouter)//only prefix
+
+//http://localhost:8000/api/v1/users
+
 export {app}
+
+
+
