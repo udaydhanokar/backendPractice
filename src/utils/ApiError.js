@@ -18,6 +18,7 @@ class ApiErrors extends Error{//here we extends (take controls of properties of 
             this.stack = stack
         }else{
             Error.captureStackTrace(this,this.constructor)
+            console.log('hi error');
         }
 
     }

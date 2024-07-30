@@ -13,7 +13,6 @@ cloudinary.config({
 
 
 
-
 const uploadOnCloudinary = async (localFilePath)=>{
     try {
         if(!localFilePath) return null
@@ -45,4 +44,3 @@ export {uploadOnCloudinary}
     // Upload an image
    
  
- console.log(uploadResult);

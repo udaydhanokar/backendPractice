@@ -22,15 +22,9 @@ app.use(cookieParser())
 
 
 
-
-//routes import
-import userRouter from './routes/user.routes.js'
-
-
-//routes declaration
-app.use('/api/v1/users',userRouter)//only prefix
-
-//http://localhost:8000/api/v1/users
+//import routes
+import userRegister from "./routes/user.routes.js"
+app.use("/api/v1/users",userRegister)
 
 export {app}
 

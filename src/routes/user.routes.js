@@ -1,15 +1,23 @@
-import {Router} from "express"
-import { registerUser } from "../controllers/user.controller.js"
-const router = Router()
+import { Router } from "express";
+import { registerUser } from "../controllers/user.controllers.js";
+import { upload } from '../middlewares/mulder.middleware.js';
+console.log(registerUser);
+const router =Router()
 
 
-router.route('/register').post(registerUser)
+console.log('tata');
 
+router.route("/register").post(
+    upload.fields([
+        { name: 'avatar',
+             maxCount: 1
+        },
+        {
+            name:'coverImage',
+            maxCount:1
+        }
+    ]),
+    registerUser
+)
 
 export default router
-
-
-
-
-
-

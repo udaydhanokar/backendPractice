@@ -54,14 +54,14 @@ const userSchema = new Schema(
         if(!this.isModified("password") ) return next();
         
     console.log("hi mi Uday ",this.username=username);
-        this.password = bcrypt.hash(this.password,10)
+        this.password = await bcrypt.hash(this.password,10)
         next()
     })
 
     userSchema.methods.isPasswordCorrect/*userSchema madhe apan he method takli isPassword correct ani logic lihla*/ = async function (password){
        return await bcrypt.compare(password,this.password)
     }
-    console.log("hi mi Uday ",this.username=username);
+    // console.log("hi mi Uday ",this.username=username);
 
     userSchema.methods.generateAccessToken=function(){
         
